@@ -1,0 +1,296 @@
+/*
+Bryant Zhang
+30103081
+SNEG 513 F24 A1
+CSS for Landing page
+*/
+/*References:
+https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade
+https://www.w3schools.com/css/css_background_image.asp
+https://developer.mozilla.org/en-US/docs/Web/CSS/::before
+https://www.w3schools.com/css/css_border.asp
+https://www.w3schools.com/cssref/css3_pr_mediaquery.php
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    /*specify width and height*/
+    box-sizing: border-box;
+}
+
+header, section, footer {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-section {
+    /*background and text color for hero section colors*/
+    background-color: #ffd105;
+    color: #ffffff;
+    /*flexbox to align hero section*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.features-section {
+    /*background-color: rgb(206, 255, 239);*/
+    /*adds spacing inbetween */
+    gap: 20px; 
+    /*space objects (articles) evenly*/
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 20px;
+    /*background flourish image and attributes*/
+    background-image: url(images/flourish.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*colour*/
+    background-color: #202020; 
+    color: #ffffff; 
+}
+
+.featureR {
+    /*border-bottom: 1px solid #ccc;*/
+    padding: 10px;
+    /*flexbox to align feature section articles*/
+    display: flex;
+    flex-direction: column;
+    /*adding backgorund colors*/
+    border: 2px solid #00ffb3c5;
+    border-radius: 20px;
+    background-color: #00ffb3c5;
+}
+
+.featureP {
+    /*border-bottom: 1px solid #ccc;*/
+    padding: 10px;
+    /*flexbox to align feature section articles*/
+    display: flex;
+    flex-direction: column;
+    /*adding backgorund colors*/
+    border: 2px solid #5900ffc5;
+    border-radius: 20px;
+    background-color: #5900ffc5;
+}
+
+.about-section {
+    background-color: #242424;
+    color: #ffffff;
+}
+
+/*About us section customizaiton*/
+.AU {
+    border: 2px solid #ff006ac5;
+    border-radius: 20px;
+    background-color: #ff006ac5;
+    width: 70%;/*70% of the horizontal space*/
+    margin: auto; /*centers*/
+    margin-bottom: 2%; /*spaces the text and image*/
+}
+
+.cta-section {
+    background-color: #303030;
+    color: #ffffff;
+}
+
+/*Contact us section customizaiton*/
+.CU {
+    border: 2px solid #ff4a32c5;
+    border-radius: 20px;
+    background-color: #ff4a32c5;
+    width: 40%;
+    margin: auto;
+}
+
+/*buttons*/
+/*attributes for all buttons*/
+button {
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: medium;
+    transition: background-color 0.3s, color  0.3s;
+    /*flexbox to align buttons*/
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+/*shop button attributes*/
+.shopButton {
+    border: 2px solid white;
+    background-color: #5900ffc5;
+    color: white;
+}
+/*shop button hovering attributes*/
+.shopButton:hover {
+    background-color: #ffd105;
+    color: black;
+}
+/*contact button attributes*/
+.contactButton {
+    border: 1px solid white;
+    background-color: #ff4a32c5;
+    color: black;
+}
+/*contact button hovering attributes*/
+.contactButton:hover {
+    background-color: #ffd105;;
+    color: #000000;
+}
+
+/*Logo attributes setting size*/
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+/*hovering the logo customizaiton*/
+.logo:hover{
+    border: 1px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+/*Lec 06-css-advanced slide 18*/
+/*extra small devices: phones*/
+@media only screen and (max-width: 600px){
+    /*on smaller screen stack features vertically*/
+    .features-section{
+        display: flex;
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    /*background image for welcome*/
+    .backGround {
+        /*xs Image for xs device*/
+        background-image: url(images/background-extra-small.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        /*size (how much space it takes in the hero seciton)*/
+        padding: 5%;
+        border-radius: 5px;
+    }
+    /*Images for about us*/
+    .about-section:after {
+        content: url(images/image-small.png);
+        /*size (how much space it takes in the hero seciton)*/
+        padding: 40px 20px;
+    }
+}
+/*small devices: tablets*/
+@media only screen and (min-width: 601px) and (max-width: 768px){
+    /*on smaller screen stack features vertically*/
+    .features-section{
+        display: flex;
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    /*background image for welcome*/
+    .backGround {
+        /*smaller Image for small device*/
+        background-image: url(images/background-small.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        /*size (how much space it takes in the hero seciton)*/
+        padding: 5%;
+        border-radius: 5px;
+    }
+    /*Images for about us*/
+    .about-section:after {
+        content: url(images/image-small.png);
+        /*size (how much space it takes in the hero seciton)*/
+        padding: 40px 20px;
+    }
+}
+/*medium devices: landscape tablets*/
+@media only screen and (min-width: 769px) and (max-width: 992px){
+    /*stack horizontally*/
+    .features-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 40px 20px;
+    }
+    /*background image for welcome*/
+    .backGround {
+        /*M Image for M device*/
+        background-image: url(images/background-medium.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        /*size (how much space it takes in the hero seciton)*/
+        padding: 5%;
+        border-radius: 5px;
+    }
+    /*Images for about us*/
+    .about-section:after {
+        content: url(images/image-medium.png);
+        /*size (how much space it takes in the hero seciton)*/
+        padding: 40px 20px;
+    }
+}
+/*large devices: laptops*/
+@media only screen and (min-width: 993px) and (max-width: 1200px){
+    /*stack horizontally*/
+    .features-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 40px 20px;
+    }
+    /*background image for welcome*/
+    .backGround {
+        /*L Image for large device*/
+        background-image: url(images/background-large.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        /*size (how much space it takes in the hero seciton)*/
+        padding: 5%;
+        border-radius: 5px;
+    }
+    /*Images for about us*/
+    .about-section:after {
+        content: url(images/image-large.png);
+        /*size (how much space it takes in the hero seciton)*/
+        padding: 40px 20px;
+    }
+}
+/*extra large devices: desktops*/
+@media only screen and (min-width: 1200px){
+    /*stack horizontally*/
+    .features-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 40px 20px;
+    }
+    /*background image for welcome*/
+    .backGround {
+        /*XL Image for larger device*/
+        background-image: url(images/background-extra-large.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        /*size (how much space it takes in the hero seciton)*/
+        padding: 5%;
+        border-radius: 5px;
+    }
+    /*Images for about us*/
+    .about-section:after {
+        content: url(images/image-extra-large.png);
+        /*size (how much space it takes in the hero seciton)*/
+        padding: 40px 20px;
+    }
+}
